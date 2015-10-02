@@ -12,6 +12,7 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <slf4j.version>1.7.12</slf4j.version>
         <wildfly.hostname>${server.wildfly.hostname}</wildfly.hostname>
         <wildfly.port>${server.wildfly.port}</wildfly.port>
         <wildfly.username>${server.wildfly.username}</wildfly.username>
