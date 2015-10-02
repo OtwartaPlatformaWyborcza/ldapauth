@@ -24,33 +24,39 @@
 package pl.otwartapw.opwldapauth.mock;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import javax.enterprise.context.ApplicationScoped;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import pl.otwartapw.opw.ldapauth.model.UserDto;
 
 /**
  *
  * @author Adam Kowalewski
  */
-@ApplicationScoped
-public class UserCache implements Serializable {
+@Named
+@ViewScoped
+public class MockBean implements Serializable {
 
-    private HashMap<String, UserDto> userMap;
+    @Inject
+    UserCache userCache;
 
-    public UserCache() {
-        userMap = new HashMap<String, UserDto>();
+    public MockBean() {
     }
 
-    public void addUser(UserDto dto) {
-        userMap.put(dto.getsAMAccountName(), dto);
+    public List<UserDto> getUserList() {
+        List<UserDto> userList = new ArrayList<UserDto>();
+
+        for (Map.Entry<String, UserDto> entry : userCache.getUserMap().entrySet()) {
+            userList.add(entry.getValue());
+        }
+        return userList;
     }
 
-    public HashMap<String, UserDto> getUserMap() {
-        return userMap;
-    }
-
-    public void setUserMap(HashMap<String, UserDto> userList) {
-        this.userMap = userList;
+    public String getVersion() {
+        return new Version().getVersionFull();
     }
 
 }

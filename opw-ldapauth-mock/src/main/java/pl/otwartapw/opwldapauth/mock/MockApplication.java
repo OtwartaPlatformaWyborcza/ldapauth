@@ -33,6 +33,6 @@ import javax.ws.rs.core.Application;
  * @version 2015.010.02
  */
 @ApplicationPath("/service")
-public class LdapAuthMockApplication extends Application {
+public class MockApplication extends Application {
 
 }
