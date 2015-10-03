@@ -25,15 +25,25 @@ package pl.otwartapw.opwldapauth.mock;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import javax.annotation.Resource;
 import javax.enterprise.context.ApplicationScoped;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pl.otwartapw.opw.ldapauth.model.UserDto;
 
 /**
+ * Simple cache implementation with fixed size.
  *
  * @author Adam Kowalewski
+ * @version 2015.10.03
  */
 @ApplicationScoped
 public class UserCache implements Serializable {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Resource(lookup = "java:global/opw/ldapauth-mock/cachesize")
+    private int cacheSize;
 
     private HashMap<String, UserDto> userMap;
 
@@ -41,8 +51,21 @@ public class UserCache implements Serializable {
         userMap = new HashMap<String, UserDto>();
     }
 
+    /**
+     * Adds given dataset to cache. Cache size check is implemented and will if required clear all
+     * previous entries from cache.
+     *
+     * @param dto complete dataset for user.
+     * @author Adam Kowalewski
+     * @version 2015.10.03
+     */
     public void addUser(UserDto dto) {
+        if (userMap.size() >= cacheSize) {
+            logger.info("Cache cleanup");
+            userMap.clear();
+        }
         userMap.put(dto.getsAMAccountName(), dto);
+        logger.info("Cache status {}/{}", userMap.size(), cacheSize);
     }
 
     public HashMap<String, UserDto> getUserMap() {
