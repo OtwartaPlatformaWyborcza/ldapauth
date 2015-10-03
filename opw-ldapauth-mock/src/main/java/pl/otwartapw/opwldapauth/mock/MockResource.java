@@ -31,35 +31,47 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import static javax.ws.rs.core.MediaType.APPLICATION_XML;
 import javax.ws.rs.core.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pl.otwartapw.opw.ldapauth.model.LdapAuthApi;
 import pl.otwartapw.opw.ldapauth.model.LoginDto;
 import pl.otwartapw.opw.ldapauth.model.LoginLdapDto;
-
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
-import static javax.ws.rs.core.MediaType.APPLICATION_XML;
 import pl.otwartapw.opw.ldapauth.model.UserDto;
 
 /**
+ * REST resource.
  *
  * @author Adam Kowalewski
+ * @version 2015.10.03
  */
 @Path("/")
 public class MockResource implements LdapAuthApi {
-
+    
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    
     @Inject
     UserCache userCache;
-
+    
     @Override
     public Response login(LoginDto dto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        UserDto user = userCache.getUserMap().get(dto.getLogin());
+        
+        if (user == null) {
+            logger.info("Login failed {}", dto.getLogin());
+            return Response.status(Response.Status.FORBIDDEN).build();
+        }
+        logger.info("Login {}", dto.getLogin());
+        return Response.ok().entity(user).build();
     }
-
+    
     @Override
     public Response loginLdap(LoginLdapDto dto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @PUT
     @Path("/user/{login}")
     @Consumes({APPLICATION_JSON, APPLICATION_XML})
@@ -68,11 +80,11 @@ public class MockResource implements LdapAuthApi {
         userCache.addUser(dto);
         return Response.ok().build();
     }
-
+    
     @Override
     public Response getVersion() {
         Version version = new Version();
         return Response.ok().entity(version.getVersionFull()).build();
     }
-
+    
 }
