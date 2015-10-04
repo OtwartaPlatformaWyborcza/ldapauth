@@ -37,6 +37,7 @@ import javax.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.otwartapw.opw.ldapauth.model.LdapAuthApi;
+import pl.otwartapw.opw.ldapauth.model.LdapConfigDto;
 import pl.otwartapw.opw.ldapauth.model.LoginDto;
 import pl.otwartapw.opw.ldapauth.model.LoginLdapDto;
 import pl.otwartapw.opw.ldapauth.model.UserDto;
@@ -49,16 +50,19 @@ import pl.otwartapw.opw.ldapauth.model.UserDto;
  */
 @Path("/")
 public class MockResource implements LdapAuthApi {
-    
+
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    
+
     @Inject
     UserCache userCache;
-    
+
     @Override
     public Response login(LoginDto dto) {
+        logger.info("login");
+        logger.trace("login {}", dto.toString());
+
         UserDto user = userCache.getUserMap().get(dto.getLogin());
-        
+
         if (user == null) {
             logger.info("Login failed {}", dto.getLogin());
             return Response.status(Response.Status.FORBIDDEN).build();
@@ -66,25 +70,35 @@ public class MockResource implements LdapAuthApi {
         logger.info("Login {}", dto.getLogin());
         return Response.ok().entity(user).build();
     }
-    
+
     @Override
     public Response loginLdap(LoginLdapDto dto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        logger.info("loginLdap");
+        logger.trace("loginLdap {}", dto.toString());
+
+        LoginDto loginDto = dto.getLoginDto();
+        LdapConfigDto configDto = dto.getConfigDto();
+
+        logger.info("LDAP context {}", configDto.toString());
+        return login(loginDto);
     }
-    
+
     @PUT
     @Path("/user/{login}")
     @Consumes({APPLICATION_JSON, APPLICATION_XML})
     @Produces({APPLICATION_JSON, APPLICATION_XML})
     public Response addUser(@PathParam("login") @NotNull String login, @NotNull @Valid UserDto dto) {
+        logger.info("addUser");
+        logger.trace("addUser {}", dto.toString());
+        
         userCache.addUser(dto);
         return Response.ok().build();
     }
-    
+
     @Override
     public Response getVersion() {
         Version version = new Version();
         return Response.ok().entity(version.getVersionFull()).build();
     }
-    
+
 }
