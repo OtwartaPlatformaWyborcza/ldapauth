@@ -1,45 +1,32 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>pl.otwartapw.ldapauth</groupId>
+        <artifactId>ldapauth-parent</artifactId>
+        <version>0.1.0-SNAPSHOT</version> 
+    </parent>
 
-    <groupId>pl.otwartapw.opw</groupId>
-    <artifactId>opw-ldapauth-mock</artifactId>
+    <groupId>pl.otwartapw.ldapauth</groupId>
+    <artifactId>ldapauth-mock</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>opw-ldapauth-mock</name>
-
-    <properties>
-        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <slf4j.version>1.7.12</slf4j.version>
-        <wildfly.hostname>${server.wildfly.hostname}</wildfly.hostname>
-        <wildfly.port>${server.wildfly.port}</wildfly.port>
-        <wildfly.username>${server.wildfly.username}</wildfly.username>
-        <wildfly.password>${server.wildfly.password}</wildfly.password>
-    </properties>
+    <name>ldapauth-mock</name>
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>opw-ldapauth-model</artifactId>
-            <version>${project.version}</version>
+            <groupId>pl.otwartapw.ldapauth</groupId>
+            <artifactId>ldapauth-model</artifactId>            
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.12</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-jdk14</artifactId>
-            <version>1.7.12</version>
-        </dependency>
+            <artifactId>slf4j-api</artifactId>            
+        </dependency>        
         <dependency>
             <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>7.0</version>
-            <scope>provided</scope>
+            <artifactId>javaee-web-api</artifactId>            
         </dependency>
     </dependencies>
 
@@ -50,8 +37,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
@@ -82,7 +69,7 @@
                                 <artifactItem>
                                     <groupId>javax</groupId>
                                     <artifactId>javaee-endorsed-api</artifactId>
-                                    <version>6.0</version>
+                                    <version>7.0</version>
                                     <type>jar</type>
                                 </artifactItem>
                             </artifactItems>
@@ -93,13 +80,6 @@
             <plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
-                <version>1.0.2.Final</version>
-                <configuration>
-                    <hostname>${wildfly.hostname}</hostname>
-                    <port>${wildfly.port}</port>
-                    <username>${wildfly.username}</username>
-                    <password>${wildfly.password}</password>
-                </configuration>
             </plugin>
         </plugins>
     </build>
