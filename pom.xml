@@ -27,9 +27,9 @@
     </licenses>
     
     <scm>
-        <connection>scm:git:git@github.com:OtwartaPlatformaWyborcza/opw-pre.git</connection>
-        <url>scm:git:git@github.com:OtwartaPlatformaWyborcza/opw-pre.git</url>
-        <developerConnection>scm:git:git@github.com:OtwartaPlatformaWyborcza/opw-pre.git</developerConnection>
+        <connection>scm:git:git@github.com:OtwartaPlatformaWyborcza/ldapauth.git</connection>
+        <url>scm:git:git@github.com:OtwartaPlatformaWyborcza/ldapauth.git</url>
+        <developerConnection>scm:git:git@github.com:OtwartaPlatformaWyborcza/ldapauth.git</developerConnection>
     </scm>
 
     <properties>
@@ -54,9 +54,9 @@
     </developers>
     
     <modules>
-        <module>opw-ldapauth</module>
-        <module>opw-ldapauth-mock</module>
-        <module>opw-ldapauth-model</module>
+        <module>ldapauth</module>
+        <module>ldapauth-mock</module>
+        <module>ldapauth-model</module>
     </modules>
     
     <dependencyManagement>
