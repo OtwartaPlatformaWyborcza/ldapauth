@@ -21,42 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package pl.otwartapw.opwldapauth.mock;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import pl.otwartapw.ldapauth.api.UserDto;
+package pl.otwartapw.ldapauth.api;
 
 /**
+ * An abstraction for custom HTTP headers within application.
  *
  * @author Adam Kowalewski
  */
-@Named
-@ViewScoped
-public class MockBean implements Serializable {
+public class LdapAuthHeaders {
 
-    @Inject
-    UserCache userCache;
-
-    public MockBean() {
-    }
-
-    public List<UserDto> getUserList() {
-        List<UserDto> userList = new ArrayList<>();
-
-        for (Map.Entry<String, UserDto> entry : userCache.getUserMap().entrySet()) {
-            userList.add(entry.getValue());
-        }
-        return userList;
-    }
-
-    public String getVersion() {
-        return new Version().getVersionFull();
-    }
+    public static final String OPW_HEADER_LDAPAUTH_TOKEN = "X-OPW-token";
 
 }

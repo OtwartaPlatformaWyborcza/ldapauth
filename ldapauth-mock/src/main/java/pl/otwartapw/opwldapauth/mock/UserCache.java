@@ -29,26 +29,28 @@ import javax.annotation.Resource;
 import javax.enterprise.context.ApplicationScoped;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.otwartapw.opw.ldapauth.model.UserDto;
+import pl.otwartapw.ldapauth.api.UserDto;
 
 /**
  * Simple cache implementation with fixed size.
  *
  * @author Adam Kowalewski
- * @version 2015.10.03
+ * @version 2015.10.15
  */
 @ApplicationScoped
 public class UserCache implements Serializable {
 
+  private static final long serialVersionUID = 1L;
+
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Resource(lookup = "java:global/opw/ldapauth-mock/cachesize")
+    @Resource(lookup = "java:global/ldapauth-mock/cachesize")
     private int cacheSize;
 
     private HashMap<String, UserDto> userMap;
 
     public UserCache() {
-        userMap = new HashMap<String, UserDto>();
+        userMap = new HashMap<>();
     }
 
     /**

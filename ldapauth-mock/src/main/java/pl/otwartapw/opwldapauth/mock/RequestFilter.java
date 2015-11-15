@@ -32,10 +32,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.otwartapw.opw.ldapauth.model.LdapAuthHeaders;
+import pl.otwartapw.ldapauth.api.LdapAuthHeaders;
 
 /**
- * Filter applied to every request before processing. 
+ * Filter applied to every request before processing.
  *
  * @author Adam Kowalewski
  * @version 2015.10.03
@@ -43,25 +43,25 @@ import pl.otwartapw.opw.ldapauth.model.LdapAuthHeaders;
 @Provider
 public class RequestFilter implements ContainerRequestFilter {
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Resource(lookup = "java:global/opw/ldapauth-mock/secretkey")
-    private String secretkey;
+  @Resource(lookup = "java:global/opw/ldapauth-mock/secretkey")
+  private String secretkey;
 
-    @Override
-    public void filter(ContainerRequestContext requestContext) throws IOException {
-        String requestToken = requestContext.getHeaderString(LdapAuthHeaders.OPW_HEADER_LDAPAUTH_TOKEN);
+  @Override
+  public void filter(ContainerRequestContext requestContext) throws IOException {
+    String requestToken = requestContext.getHeaderString(LdapAuthHeaders.OPW_HEADER_LDAPAUTH_TOKEN);
 
-        if (requestToken == null || !requestToken.equals(secretkey)) {
-            logger.warn("Bad request token {}", requestToken);
-            Response response = Response
-                    .status(Response.Status.FORBIDDEN)
-                    .entity("Bad request token.")
-                    .build();
-            
-            throw new ForbiddenException(response);
-        }
+    if (requestToken == null || !requestToken.equals(secretkey)) {
+      logger.warn("Bad request token {}", requestToken);
+      Response response = Response
+              .status(Response.Status.FORBIDDEN)
+              .entity("Bad request token.")
+              .build();
 
+      throw new ForbiddenException(response);
     }
+
+  }
 
 }

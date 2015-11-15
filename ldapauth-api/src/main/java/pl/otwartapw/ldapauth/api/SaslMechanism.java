@@ -21,42 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package pl.otwartapw.opwldapauth.mock;
+package pl.otwartapw.ldapauth.api;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import pl.otwartapw.ldapauth.api.UserDto;
+public enum SaslMechanism {
+    SIMPLE("simple"),
+    DIGEST_MD5("DIGEST-MD5");
 
-/**
- *
- * @author Adam Kowalewski
- */
-@Named
-@ViewScoped
-public class MockBean implements Serializable {
+    private final String value;
 
-    @Inject
-    UserCache userCache;
-
-    public MockBean() {
+    SaslMechanism(String value) {
+        this.value = value;
     }
 
-    public List<UserDto> getUserList() {
-        List<UserDto> userList = new ArrayList<>();
-
-        for (Map.Entry<String, UserDto> entry : userCache.getUserMap().entrySet()) {
-            userList.add(entry.getValue());
-        }
-        return userList;
+    String value() {
+        return value;
     }
-
-    public String getVersion() {
-        return new Version().getVersionFull();
-    }
-
 }

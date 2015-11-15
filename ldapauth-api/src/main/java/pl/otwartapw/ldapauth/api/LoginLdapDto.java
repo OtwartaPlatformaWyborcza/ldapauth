@@ -21,42 +21,58 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package pl.otwartapw.opwldapauth.mock;
+package pl.otwartapw.ldapauth.api;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import pl.otwartapw.ldapauth.api.UserDto;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
+ * DTO represents user login with custom LDAP context.
  *
  * @author Adam Kowalewski
+ * @version 2015.10.04
  */
-@Named
-@ViewScoped
-public class MockBean implements Serializable {
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+public class LoginLdapDto implements Serializable {
 
-    @Inject
-    UserCache userCache;
+    private final static long serialVersionUID = 1L;
 
-    public MockBean() {
+    private LoginDto loginDto;
+    private LdapConfigDto configDto;
+
+    public LoginLdapDto() {
     }
 
-    public List<UserDto> getUserList() {
-        List<UserDto> userList = new ArrayList<>();
-
-        for (Map.Entry<String, UserDto> entry : userCache.getUserMap().entrySet()) {
-            userList.add(entry.getValue());
-        }
-        return userList;
+    public LoginLdapDto(LoginDto loginDto, LdapConfigDto configDto) {
+        this.loginDto = loginDto;
+        this.configDto = configDto;
     }
 
-    public String getVersion() {
-        return new Version().getVersionFull();
+    public LoginDto getLoginDto() {
+        return loginDto;
+    }
+
+    public void setLoginDto(LoginDto loginDto) {
+        this.loginDto = loginDto;
+    }
+
+    public LdapConfigDto getConfigDto() {
+        return configDto;
+    }
+
+    public void setConfigDto(LdapConfigDto configDto) {
+        this.configDto = configDto;
+    }
+
+    @Override
+    public String toString() {
+        return "LoginLdapDto{"
+                + "loginDto=" + loginDto
+                + ", configDto=" + configDto
+                + '}';
     }
 
 }

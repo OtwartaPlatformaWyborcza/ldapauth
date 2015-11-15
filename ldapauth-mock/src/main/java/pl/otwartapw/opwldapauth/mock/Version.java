@@ -36,54 +36,65 @@ import org.slf4j.LoggerFactory;
  */
 public class Version {
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private final String URI = "/META-INF/maven/pl.otwartapw.opw/opw-ldapauth-mock/pom.properties";
-    private final String VERSION = "version";
-    private final String ID = "artifactId";
+  private final String URI = "/META-INF/maven/pl.otwartapw.opw/opw-ldapauth-mock/pom.properties";
+  private final String VERSION = "version";
+  private final String ID = "artifactId";
 
-    private Properties properties;
+  private Properties properties;
 
-    public Version() {
-        properties = new Properties();
-        InputStream resourceAsStream = this.getClass().getResourceAsStream(URI);
-        try {
-            properties.load(resourceAsStream);
-        } catch (IOException ex) {
-            logger.error("Artifact version could not be read.", ex);
-        }
+  public Version() {
+    properties = new Properties();
+    InputStream resourceAsStream = this.getClass().getResourceAsStream(URI);
+    try {
+      properties.load(resourceAsStream);
+    } catch (IOException ex) {
+      properties.setProperty(VERSION, "");
+      properties.setProperty(ID, "");
+      logger.error("Artifact version could not be read.", ex);
+    }
+  }
+
+  /**
+   * Returns version number as specified in <code>pom.properties</code>.
+   *
+   * @return current version number.
+   * @author Adam Kowalewski
+   * @version 2015.09.28
+   */
+  public String getVersion() {
+    try {
+      return properties.getProperty(VERSION);
+    } catch (Exception e) {
+      return "";
     }
 
-    /**
-     * Returns version number as specified in <code>pom.properties</code>.
-     *
-     * @return current version number.
-     * @author Adam Kowalewski
-     * @version 2015.09.28
-     */
-    public String getVersion() {
-        return properties.getProperty(VERSION);
-    }
+  }
 
-    /**
-     * Returns ID of the artefact as specified in <code>pom.properties</code>.
-     *
-     * @return artefactId.
-     * @author Adam Kowalewski
-     * @version 2015.09.28
-     */
-    public String getName() {
-        return properties.getProperty(ID);
+  /**
+   * Returns ID of the artefact as specified in <code>pom.properties</code>.
+   *
+   * @return artefactId.
+   * @author Adam Kowalewski
+   * @version 2015.09.28
+   */
+  public String getName() {
+    try {
+      return properties.getProperty(ID);
+    } catch (Exception e) {
+      return "";
     }
+  }
 
-    /**
-     * Returns version number in format ID-VERSION.
-     *
-     * @return full version.
-     * @author Adam Kowalewski
-     * @version 2015.09.28
-     */
-    public String getVersionFull() {
-        return getName() + "-" + getVersion();
-    }
+  /**
+   * Returns version number in format ID-VERSION.
+   *
+   * @return full version.
+   * @author Adam Kowalewski
+   * @version 2015.09.28
+   */
+  public String getVersionFull() {
+    return getName() + "-" + getVersion();
+  }
 }

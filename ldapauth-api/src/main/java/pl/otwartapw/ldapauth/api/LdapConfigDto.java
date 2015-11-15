@@ -21,42 +21,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package pl.otwartapw.opwldapauth.mock;
+package pl.otwartapw.ldapauth.api;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import pl.otwartapw.ldapauth.api.UserDto;
 
 /**
  *
- * @author Adam Kowalewski
+ * @author Adam Kowalewski <adamkowalewski.com>
  */
-@Named
-@ViewScoped
-public class MockBean implements Serializable {
+public class LdapConfigDto implements Serializable {
 
-    @Inject
-    UserCache userCache;
+    private static final long serialVersionUID = 1L;
+    
+    private String providerUrl;    
+    private String securityAuthentication;
+    private String searchRoot;
+    private String searchFilter;
 
-    public MockBean() {
+    public LdapConfigDto() {
     }
 
-    public List<UserDto> getUserList() {
-        List<UserDto> userList = new ArrayList<>();
-
-        for (Map.Entry<String, UserDto> entry : userCache.getUserMap().entrySet()) {
-            userList.add(entry.getValue());
-        }
-        return userList;
+    public LdapConfigDto(String providerUrl, String securityAuthentication, String searchRoot, String searchFilter) {
+        this.providerUrl = providerUrl;
+        this.securityAuthentication = securityAuthentication;
+        this.searchRoot = searchRoot;
+        this.searchFilter = searchFilter;
     }
-
-    public String getVersion() {
-        return new Version().getVersionFull();
-    }
+    
+    
 
 }

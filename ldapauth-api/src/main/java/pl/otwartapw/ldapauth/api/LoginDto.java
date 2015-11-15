@@ -21,42 +21,59 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package pl.otwartapw.opwldapauth.mock;
+package pl.otwartapw.ldapauth.api;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import pl.otwartapw.ldapauth.api.UserDto;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
+ * DTO represents default user context before authentication.
  *
  * @author Adam Kowalewski
+ * @version 2015.09.28
  */
-@Named
-@ViewScoped
-public class MockBean implements Serializable {
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+public class LoginDto implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    
 
-    @Inject
-    UserCache userCache;
+    private String login;
+    private String password;
 
-    public MockBean() {
+    public LoginDto() {
     }
 
-    public List<UserDto> getUserList() {
-        List<UserDto> userList = new ArrayList<>();
-
-        for (Map.Entry<String, UserDto> entry : userCache.getUserMap().entrySet()) {
-            userList.add(entry.getValue());
-        }
-        return userList;
+    public LoginDto(String login, String password) {
+        this.login = login;
+        this.password = password;
     }
 
-    public String getVersion() {
-        return new Version().getVersionFull();
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "LoginDto{"
+                + "login=" + login
+                + ", password=" + password
+                + '}';
     }
 
 }

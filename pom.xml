@@ -55,39 +55,16 @@
     
     <modules>
         <module>ldapauth</module>
-        <module>ldapauth-mock</module>
-        <module>ldapauth-model</module>
+        <module>ldapauth-api</module>
+        <module>ldapauth-mock</module>        
     </modules>
     
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>ldapauth-model</artifactId>
+                <artifactId>ldapauth-api</artifactId>
                 <version>${project.version}</version>
-            </dependency>            
-            <dependency>
-                <groupId>org.primefaces</groupId>
-                <artifactId>primefaces</artifactId>
-                <version>5.3</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.resteasy</groupId>
-                <artifactId>resteasy-client</artifactId>
-                <version>${version.resteasy}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.resteasy</groupId>
-                <artifactId>resteasy-jackson-provider</artifactId>
-                <version>${version.resteasy}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.resteasy</groupId>
-                <artifactId>resteasy-json-p-provider</artifactId>
-                <version>${version.resteasy}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
