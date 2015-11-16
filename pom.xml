@@ -55,8 +55,8 @@
     
     <modules>
         <module>ldapauth</module>
+        <module>ldapauth-mock</module>
         <module>ldapauth-api</module>
-        <module>ldapauth-mock</module>        
     </modules>
     
     <dependencyManagement>
