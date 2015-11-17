@@ -18,8 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>pl.otwartapw.ldapauth</groupId>
-            <artifactId>opw-ldapauth-model</artifactId>
-            <version>${project.version}</version>
+            <artifactId>ldapauth-api</artifactId>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
