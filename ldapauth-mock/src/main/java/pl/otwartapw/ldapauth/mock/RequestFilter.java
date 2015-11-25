@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package pl.otwartapw.opwldapauth.mock;
+package pl.otwartapw.ldapauth.mock;
 
 import java.io.IOException;
 import javax.annotation.Resource;

@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package pl.otwartapw.opwldapauth.mock;
+package pl.otwartapw.ldapauth.mock;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,7 +38,7 @@ public class Version {
 
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-  private final String URI = "/META-INF/maven/pl.otwartapw.opw/opw-ldapauth-mock/pom.properties";
+  private final String URI = "/META-INF/maven/pl.otwartapw/ldapauth-mock/pom.properties";
   private final String VERSION = "version";
   private final String ID = "artifactId";
 

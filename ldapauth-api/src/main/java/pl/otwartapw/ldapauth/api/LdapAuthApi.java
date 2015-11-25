@@ -32,6 +32,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static javax.ws.rs.core.MediaType.APPLICATION_XML;
+import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 import javax.ws.rs.core.Response;
 
 /**
@@ -74,7 +75,7 @@ public interface LdapAuthApi {
      */
     @GET
     @Path("/version")
-    @Produces({APPLICATION_JSON})
+    @Produces({TEXT_PLAIN})
     public Response getVersion();
 
 }

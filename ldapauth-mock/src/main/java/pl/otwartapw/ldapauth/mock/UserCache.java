@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package pl.otwartapw.opwldapauth.mock;
+package pl.otwartapw.ldapauth.mock;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -44,7 +44,7 @@ public class UserCache implements Serializable {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Resource(lookup = "java:global/ldapauth-mock/cachesize")
+    @Resource(lookup = "java:global/ldapauth-mock/usercache")
     private int cacheSize;
 
     private HashMap<String, UserDto> userMap;

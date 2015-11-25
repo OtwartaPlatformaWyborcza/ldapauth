@@ -21,42 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package pl.otwartapw.opwldapauth.mock;
+package pl.otwartapw.ldapauth.mock;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import pl.otwartapw.ldapauth.api.UserDto;
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 
 /**
+ * REST activator for MOCK service.
  *
  * @author Adam Kowalewski
+ * @version 2015.010.02
  */
-@Named
-@ViewScoped
-public class MockBean implements Serializable {
-
-    @Inject
-    UserCache userCache;
-
-    public MockBean() {
-    }
-
-    public List<UserDto> getUserList() {
-        List<UserDto> userList = new ArrayList<>();
-
-        for (Map.Entry<String, UserDto> entry : userCache.getUserMap().entrySet()) {
-            userList.add(entry.getValue());
-        }
-        return userList;
-    }
-
-    public String getVersion() {
-        return new Version().getVersionFull();
-    }
+@ApplicationPath("/service")
+public class MockApplication extends Application {
 
 }
