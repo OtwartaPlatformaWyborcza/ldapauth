@@ -8,15 +8,15 @@ REST service for authentication against LDAP / ADS
 
 ## Version 0.1.0
 Service definition and MOCK implementation.
-* [LDAPAUTH-2]((https://otwartapw.atlassian.net/browse/LDAPAUTH-2) As software developer I can develop my application against service mock.
+* [LDAPAUTH-2]((https://otwartapw.atlassian.net/browse/LDAPAUTH-2) Mock implementation
 * [LDAPAUTH-3]((https://otwartapw.atlassian.net/browse/LDAPAUTH-3) POM cleanup
 * [LDAPAUTH-5]((https://otwartapw.atlassian.net/browse/LDAPAUTH-5) As developer I can easily populate service mock with some default accounts.
 * [LDAPAUTH-4]((https://otwartapw.atlassian.net/browse/LDAPAUTH-4) API definition.
 
 ## Version 0.2.0
 Service implementation.
-* [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) As user I can authenticate against LDAP.
-* [LDAPAUTH-7]((https://otwartapw.atlassian.net/browse/LDAPAUTH-7) As administrator I can configure the application with JNDI parameters.
+* [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) Service implementation
+* [LDAPAUTH-7]((https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
 
 ## Version 0.3.0
 Beta release.
@@ -30,3 +30,6 @@ RC2
 
 ## Version 1.0.0
 First release
+
+
+# Changelog
