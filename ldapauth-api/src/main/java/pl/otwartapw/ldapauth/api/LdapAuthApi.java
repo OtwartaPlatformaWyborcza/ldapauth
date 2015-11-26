@@ -53,7 +53,7 @@ public interface LdapAuthApi {
     @Path("/login")
     @Consumes({APPLICATION_JSON, APPLICATION_XML})
     @Produces({APPLICATION_JSON, APPLICATION_XML})
-    public Response login(@NotNull @Valid LoginDto dto);
+    Response login(@NotNull @Valid LoginDto dto);
 
     /**
      * Perform LDAP login with custom LDAP context.
@@ -66,7 +66,7 @@ public interface LdapAuthApi {
     @Path("/loginldap")
     @Consumes({APPLICATION_JSON, APPLICATION_XML})
     @Produces({APPLICATION_JSON, APPLICATION_XML})
-    public Response loginLdap(@NotNull @Valid LoginLdapDto dto);
+    Response loginLdap(@NotNull @Valid LoginLdapDto dto);
 
     /**
      * Returns artifact version.
@@ -76,6 +76,6 @@ public interface LdapAuthApi {
     @GET
     @Path("/version")
     @Produces({TEXT_PLAIN})
-    public Response getVersion();
+    Response getVersion();
 
 }
