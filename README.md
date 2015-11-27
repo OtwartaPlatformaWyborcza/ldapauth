@@ -15,6 +15,11 @@ REST service for authentication against LDAP / ADS
 
 
 # Configuration
+JNDI  
+java:global/ldapauth-mock/cachesize  
+java:global/ldapauth-mock/usercache  
+java:global/opw/ldapauth-mock/secretkey  
+java:global/ldapauth-mock/secretkey
 
 
 # Roadmap
