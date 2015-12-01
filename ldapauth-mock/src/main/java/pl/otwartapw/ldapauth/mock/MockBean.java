@@ -40,23 +40,25 @@ import pl.otwartapw.ldapauth.api.UserDto;
 @ViewScoped
 public class MockBean implements Serializable {
 
-    @Inject
-    UserCache userCache;
+  private static final long serialVersionUID = 1L;
 
-    public MockBean() {
+  @Inject
+  UserCache userCache;
+
+  public MockBean() {
+  }
+
+  public List<UserDto> getUserList() {
+    List<UserDto> userList = new ArrayList<>();
+
+    for (Map.Entry<String, UserDto> entry : userCache.getUserMap().entrySet()) {
+      userList.add(entry.getValue());
     }
+    return userList;
+  }
 
-    public List<UserDto> getUserList() {
-        List<UserDto> userList = new ArrayList<>();
-
-        for (Map.Entry<String, UserDto> entry : userCache.getUserMap().entrySet()) {
-            userList.add(entry.getValue());
-        }
-        return userList;
-    }
-
-    public String getVersion() {
-        return new Version().getVersionFull();
-    }
+  public String getVersion() {
+    return new Version().getVersionFull();
+  }
 
 }

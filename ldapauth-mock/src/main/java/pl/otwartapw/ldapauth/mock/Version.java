@@ -38,7 +38,7 @@ public class Version {
 
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-  private final String URI = "/META-INF/maven/pl.otwartapw/ldapauth-mock/pom.properties";
+  private final String URI = "/META-INF/maven/pl.otwartapw.ldapauth/ldapauth-mock/pom.properties";
   private final String VERSION = "version";
   private final String ID = "artifactId";
 
