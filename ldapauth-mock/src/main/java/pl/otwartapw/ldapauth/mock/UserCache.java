@@ -42,40 +42,40 @@ public class UserCache implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Resource(lookup = "java:global/ldapauth-mock/usercache")
-    private int cacheSize;
+  @Resource(lookup = "java:global/ldapauth-mock/usercache")
+  private int cacheSize;
 
-    private HashMap<String, UserDto> userMap;
+  private HashMap<String, UserDto> userMap;
 
-    public UserCache() {
-        userMap = new HashMap<>();
+  public UserCache() {
+    userMap = new HashMap<>();
+  }
+
+  /**
+   * Adds given dataset to cache. Cache size check is implemented and will if required clear all
+   * previous entries from cache.
+   *
+   * @param dto complete dataset for user.
+   * @author Adam Kowalewski
+   * @version 2015.10.03
+   */
+  public void addUser(UserDto dto) {
+    if (userMap.size() >= cacheSize) {
+      logger.info("Cache cleanup");
+      userMap.clear();
     }
+    userMap.put(dto.getsAMAccountName(), dto);
+    logger.info("Cache status {}/{}", userMap.size(), cacheSize);
+  }
 
-    /**
-     * Adds given dataset to cache. Cache size check is implemented and will if required clear all
-     * previous entries from cache.
-     *
-     * @param dto complete dataset for user.
-     * @author Adam Kowalewski
-     * @version 2015.10.03
-     */
-    public void addUser(UserDto dto) {
-        if (userMap.size() >= cacheSize) {
-            logger.info("Cache cleanup");
-            userMap.clear();
-        }
-        userMap.put(dto.getsAMAccountName(), dto);
-        logger.info("Cache status {}/{}", userMap.size(), cacheSize);
-    }
+  public HashMap<String, UserDto> getUserMap() {
+    return userMap;
+  }
 
-    public HashMap<String, UserDto> getUserMap() {
-        return userMap;
-    }
-
-    public void setUserMap(HashMap<String, UserDto> userList) {
-        this.userMap = userList;
-    }
+  public void setUserMap(HashMap<String, UserDto> userList) {
+    this.userMap = userList;
+  }
 
 }
