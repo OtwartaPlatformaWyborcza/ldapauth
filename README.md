@@ -15,12 +15,16 @@ REST service for authentication against LDAP / ADS
 
 
 # Configuration
-JNDI  
-java:global/ldapauth-mock/cachesize  
-java:global/ldapauth-mock/usercache  
-java:global/opw/ldapauth-mock/secretkey  
-java:global/ldapauth-mock/secretkey
 
+## LDAP Auth
+
+## LDAP Auth Mock
+Aplication is configured via JNDI. 
+
+| JNDI | Default  | Description  |
+| -------------| ------------- | ------------- |
+| java:global/ldapauth-mock/cachesize | 5 | Cache size |
+| java:global/ldapauth-mock/secretkey | secret | optional |
 
 # Roadmap
 
