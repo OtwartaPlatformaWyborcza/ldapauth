@@ -37,83 +37,88 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class UserDto implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private String sAMAccountName;
-    private String firstname;
-    private String lastname;
-    private String guid;
-    private String email;
-    private ArrayList<String> groupList;
-    private ArrayList<String> groupCanonicalList;
+  private String sAMAccountName;
+  private String firstname;
+  private String lastname;
+  private String guid;
+  private String email;
+  private ArrayList<String> groupList;
+  private ArrayList<String> groupCanonicalList;
 
-    public String getsAMAccountName() {
-        return sAMAccountName;
-    }
+  public UserDto() {
+    groupList = new ArrayList<>();
+    groupCanonicalList = new ArrayList<>();
+  }
 
-    public void setsAMAccountName(String sAMAccountName) {
-        this.sAMAccountName = sAMAccountName;
-    }
+  public String getsAMAccountName() {
+    return sAMAccountName;
+  }
 
-    public String getFirstname() {
-        return firstname;
-    }
+  public void setsAMAccountName(String sAMAccountName) {
+    this.sAMAccountName = sAMAccountName;
+  }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
+  public String getFirstname() {
+    return firstname;
+  }
 
-    public String getLastname() {
-        return lastname;
-    }
+  public void setFirstname(String firstname) {
+    this.firstname = firstname;
+  }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
+  public String getLastname() {
+    return lastname;
+  }
 
-    public String getGuid() {
-        return guid;
-    }
+  public void setLastname(String lastname) {
+    this.lastname = lastname;
+  }
 
-    public void setGuid(String guid) {
-        this.guid = guid;
-    }
+  public String getGuid() {
+    return guid;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public void setGuid(String guid) {
+    this.guid = guid;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public ArrayList<String> getGroupList() {
-        return groupList;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setGroupList(ArrayList<String> groupList) {
-        this.groupList = groupList;
-    }
+  public ArrayList<String> getGroupList() {
+    return groupList;
+  }
 
-    public ArrayList<String> getGroupCanonicalList() {
-        return groupCanonicalList;
-    }
+  public void setGroupList(ArrayList<String> groupList) {
+    this.groupList = groupList;
+  }
 
-    public void setGroupCanonicalList(ArrayList<String> groupCanonicalList) {
-        this.groupCanonicalList = groupCanonicalList;
-    }
+  public ArrayList<String> getGroupCanonicalList() {
+    return groupCanonicalList;
+  }
 
-    @Override
-    public String toString() {
-        return "UserDto{" 
-                + "sAMAccountName=" + sAMAccountName
-                + ", firstname=" + firstname
-                + ", lastname=" + lastname
-                + ", guid=" + guid
-                + ", email=" + email
-                + ", groupList=" + groupList.size()
-                + ", groupCanonicalList=" + groupCanonicalList.size()
-                + '}';
-    }
+  public void setGroupCanonicalList(ArrayList<String> groupCanonicalList) {
+    this.groupCanonicalList = groupCanonicalList;
+  }
+
+  @Override
+  public String toString() {
+    return "UserDto{"
+            + "sAMAccountName=" + sAMAccountName
+            + ", firstname=" + firstname
+            + ", lastname=" + lastname
+            + ", guid=" + guid
+            + ", email=" + email
+            + ", groupList=" + groupList.size()
+            + ", groupCanonicalList=" + groupCanonicalList.size()
+            + '}';
+  }
 
 }

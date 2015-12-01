@@ -45,7 +45,7 @@ public class RequestFilter implements ContainerRequestFilter {
 
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-  @Resource(lookup = "java:global/opw/ldapauth-mock/secretkey")
+  @Resource(lookup = "java:global/ldapauth-mock/secretkey")
   private String secretkey;
 
   @Override
