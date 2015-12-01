@@ -24,16 +24,16 @@
 package pl.otwartapw.ldapauth.api;
 
 public enum SaslMechanism {
-    SIMPLE("simple"),
-    DIGEST_MD5("DIGEST-MD5");
+  SIMPLE("simple"),
+  DIGEST_MD5("DIGEST-MD5");
 
-    private final String value;
+  private final String value;
 
-    SaslMechanism(String value) {
-        this.value = value;
-    }
+  SaslMechanism(String value) {
+    this.value = value;
+  }
 
-    String value() {
-        return value;
-    }
+  String value() {
+    return value;
+  }
 }

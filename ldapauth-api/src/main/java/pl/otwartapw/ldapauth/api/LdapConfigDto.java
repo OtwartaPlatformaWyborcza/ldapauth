@@ -31,23 +31,21 @@ import java.io.Serializable;
  */
 public class LdapConfigDto implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    
-    private String providerUrl;    
-    private String securityAuthentication;
-    private String searchRoot;
-    private String searchFilter;
+  private static final long serialVersionUID = 1L;
 
-    public LdapConfigDto() {
-    }
+  private String providerUrl;
+  private String securityAuthentication;
+  private String searchRoot;
+  private String searchFilter;
 
-    public LdapConfigDto(String providerUrl, String securityAuthentication, String searchRoot, String searchFilter) {
-        this.providerUrl = providerUrl;
-        this.securityAuthentication = securityAuthentication;
-        this.searchRoot = searchRoot;
-        this.searchFilter = searchFilter;
-    }
-    
-    
+  public LdapConfigDto() {
+  }
+
+  public LdapConfigDto(String providerUrl, String securityAuthentication, String searchRoot, String searchFilter) {
+    this.providerUrl = providerUrl;
+    this.securityAuthentication = securityAuthentication;
+    this.searchRoot = searchRoot;
+    this.searchFilter = searchFilter;
+  }
 
 }

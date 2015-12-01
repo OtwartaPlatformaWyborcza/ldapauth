@@ -42,40 +42,40 @@ import javax.ws.rs.core.Response;
  */
 public interface LdapAuthApi {
 
-    /**
-     * Perform LDAP login.
-     *
-     * @param dto user credentials.
-     * @return when successful response with status 200 and {@link UserDto} within response body,
-     * otherwise standard HTTP status codes.
-     */
-    @POST
-    @Path("/login")
-    @Consumes({APPLICATION_JSON, APPLICATION_XML})
-    @Produces({APPLICATION_JSON, APPLICATION_XML})
-    Response login(@NotNull @Valid LoginDto dto);
+  /**
+   * Perform LDAP login.
+   *
+   * @param dto user credentials.
+   * @return when successful response with status 200 and {@link UserDto} within response body,
+   * otherwise standard HTTP status codes.
+   */
+  @POST
+  @Path("/login")
+  @Consumes({APPLICATION_JSON, APPLICATION_XML})
+  @Produces({APPLICATION_JSON, APPLICATION_XML})
+  Response login(@NotNull @Valid LoginDto dto);
 
-    /**
-     * Perform LDAP login with custom LDAP context.
-     *
-     * @param dto user credentials with LDAP context.
-     * @return when successful response with status 200 and {@link UserDto} within response body,
-     * otherwise standard HTTP status codes.
-     */
-    @POST
-    @Path("/loginldap")
-    @Consumes({APPLICATION_JSON, APPLICATION_XML})
-    @Produces({APPLICATION_JSON, APPLICATION_XML})
-    Response loginLdap(@NotNull @Valid LoginLdapDto dto);
+  /**
+   * Perform LDAP login with custom LDAP context.
+   *
+   * @param dto user credentials with LDAP context.
+   * @return when successful response with status 200 and {@link UserDto} within response body,
+   * otherwise standard HTTP status codes.
+   */
+  @POST
+  @Path("/loginldap")
+  @Consumes({APPLICATION_JSON, APPLICATION_XML})
+  @Produces({APPLICATION_JSON, APPLICATION_XML})
+  Response loginLdap(@NotNull @Valid LoginLdapDto dto);
 
-    /**
-     * Returns artifact version.
-     *
-     * @return artifact version.
-     */
-    @GET
-    @Path("/version")
-    @Produces({TEXT_PLAIN})
-    Response getVersion();
+  /**
+   * Returns artifact version.
+   *
+   * @return artifact version.
+   */
+  @GET
+  @Path("/version")
+  @Produces({TEXT_PLAIN})
+  Response getVersion();
 
 }

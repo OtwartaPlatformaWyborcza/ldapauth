@@ -38,41 +38,41 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LoginLdapDto implements Serializable {
 
-    private final static long serialVersionUID = 1L;
+  private final static long serialVersionUID = 1L;
 
-    private LoginDto loginDto;
-    private LdapConfigDto configDto;
+  private LoginDto loginDto;
+  private LdapConfigDto configDto;
 
-    public LoginLdapDto() {
-    }
+  public LoginLdapDto() {
+  }
 
-    public LoginLdapDto(LoginDto loginDto, LdapConfigDto configDto) {
-        this.loginDto = loginDto;
-        this.configDto = configDto;
-    }
+  public LoginLdapDto(LoginDto loginDto, LdapConfigDto configDto) {
+    this.loginDto = loginDto;
+    this.configDto = configDto;
+  }
 
-    public LoginDto getLoginDto() {
-        return loginDto;
-    }
+  public LoginDto getLoginDto() {
+    return loginDto;
+  }
 
-    public void setLoginDto(LoginDto loginDto) {
-        this.loginDto = loginDto;
-    }
+  public void setLoginDto(LoginDto loginDto) {
+    this.loginDto = loginDto;
+  }
 
-    public LdapConfigDto getConfigDto() {
-        return configDto;
-    }
+  public LdapConfigDto getConfigDto() {
+    return configDto;
+  }
 
-    public void setConfigDto(LdapConfigDto configDto) {
-        this.configDto = configDto;
-    }
+  public void setConfigDto(LdapConfigDto configDto) {
+    this.configDto = configDto;
+  }
 
-    @Override
-    public String toString() {
-        return "LoginLdapDto{"
-                + "loginDto=" + loginDto
-                + ", configDto=" + configDto
-                + '}';
-    }
+  @Override
+  public String toString() {
+    return "LoginLdapDto{"
+            + "loginDto=" + loginDto
+            + ", configDto=" + configDto
+            + '}';
+  }
 
 }

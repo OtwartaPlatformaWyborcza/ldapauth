@@ -30,6 +30,6 @@ package pl.otwartapw.ldapauth.api;
  */
 public class LdapAuthHeaders {
 
-    public static final String OPW_HEADER_LDAPAUTH_TOKEN = "X-OPW-token";
+  public static final String OPW_HEADER_LDAPAUTH_TOKEN = "X-OPW-token";
 
 }
