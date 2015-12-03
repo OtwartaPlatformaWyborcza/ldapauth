@@ -30,10 +30,10 @@ Application is configured via JNDI.
 
 ## Version 0.1.0
 Service definition and MOCK implementation.
-* [LDAPAUTH-2]((https://otwartapw.atlassian.net/browse/LDAPAUTH-2) Mock implementation
+* [x][LDAPAUTH-2]((https://otwartapw.atlassian.net/browse/LDAPAUTH-2) Mock implementation
 * [x] [LDAPAUTH-3]((https://otwartapw.atlassian.net/browse/LDAPAUTH-3) POM cleanup
-* [LDAPAUTH-5]((https://otwartapw.atlassian.net/browse/LDAPAUTH-5) As developer I can easily populate service mock with some default accounts.
-* [LDAPAUTH-4]((https://otwartapw.atlassian.net/browse/LDAPAUTH-4) API definition.
+* [x] [LDAPAUTH-5]((https://otwartapw.atlassian.net/browse/LDAPAUTH-5) Userfriendly populate and clear logic for mock.
+* [x] [LDAPAUTH-4]((https://otwartapw.atlassian.net/browse/LDAPAUTH-4) API definition.
 
 ## Version 0.2.0
 Service implementation.
