@@ -9,37 +9,48 @@
         <h1>LDAP Authentication MOCK</h1>
         <p>Version: #{mockBean.version}</p>
         <p>Users: #{mockBean.userList.size()}</p>
-        
+
         <h2>User cache</h2>
         <h:dataTable id="users" border="1" 
                      value="#{mockBean.userList}" var="user">
             <h:column>
                 <f:facet name="header">sAMAccountName</f:facet>
-                #{user.getsAMAccountName()}
+                    #{user.getsAMAccountName()}
             </h:column>
             <h:column>
                 <f:facet name="header">Firstname</f:facet>
-                #{user.firstname}
+                    #{user.firstname}
             </h:column>
             <h:column>
                 <f:facet name="header">Lastname</f:facet>
-                #{user.lastname}
+                    #{user.lastname}
             </h:column>            
             <h:column>
                 <f:facet name="header">E-Mail</f:facet>
-                #{user.email}
+                    #{user.email}
             </h:column>
             <h:column>
                 <f:facet name="header">GUID</f:facet>
-                #{user.guid}
+                    #{user.guid}
             </h:column>
             <h:column>
-                <f:facet name="header"></f:facet>
-                #{user.groupList.size()}
+                <f:facet name="header">Group size()</f:facet>
+                    #{user.groupList.size()}
             </h:column>            
-        
+            <h:column>
+                <f:facet name="header">GroupCanonical size()</f:facet>
+                    #{user.groupCanonicalList.size()}
+            </h:column>            
+
         </h:dataTable>
-        
+
+        <h2>Actions</h2>
+        <h:form id="frmAction">
+            <h:commandButton id="populate" action="#{mockBean.populate()}" value="populate()" />
+            <h:outputText value=" " />
+            <h:commandButton id="clear" action="#{mockBean.clear()}" value="clear()" />
+        </h:form>
+
     </h:body>
 </html>
 

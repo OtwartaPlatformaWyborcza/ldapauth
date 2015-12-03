@@ -25,6 +25,7 @@ package pl.otwartapw.ldapauth.api;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -44,12 +45,23 @@ public class UserDto implements Serializable {
   private String lastname;
   private String guid;
   private String email;
-  private ArrayList<String> groupList;
-  private ArrayList<String> groupCanonicalList;
+  private List<String> groupList;
+  private List<String> groupCanonicalList;
 
   public UserDto() {
     groupList = new ArrayList<>();
     groupCanonicalList = new ArrayList<>();
+  }
+
+  public UserDto(String sAMAccountName, String firstname, String lastname, String guid, String email,
+          List<String> groupList, List<String> groupCanonicalList) {
+    this.sAMAccountName = sAMAccountName;
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.guid = guid;
+    this.email = email;
+    this.groupList = groupList;
+    this.groupCanonicalList = groupCanonicalList;
   }
 
   public String getsAMAccountName() {
@@ -92,19 +104,19 @@ public class UserDto implements Serializable {
     this.email = email;
   }
 
-  public ArrayList<String> getGroupList() {
+  public List<String> getGroupList() {
     return groupList;
   }
 
-  public void setGroupList(ArrayList<String> groupList) {
+  public void setGroupList(List<String> groupList) {
     this.groupList = groupList;
   }
 
-  public ArrayList<String> getGroupCanonicalList() {
+  public List<String> getGroupCanonicalList() {
     return groupCanonicalList;
   }
 
-  public void setGroupCanonicalList(ArrayList<String> groupCanonicalList) {
+  public void setGroupCanonicalList(List<String> groupCanonicalList) {
     this.groupCanonicalList = groupCanonicalList;
   }
 

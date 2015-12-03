@@ -48,6 +48,33 @@ public class MockBean implements Serializable {
   public MockBean() {
   }
 
+  /**
+   * Generates default user list.
+   *
+   * @author Adam Kowalewski
+   * @version 2015.12.03
+   */
+  public void populate() {
+    List<String> userList = new ArrayList<>();
+    userList.add("teama");
+    userList.add("teamb");
+    userList.add("teamc");
+
+    userCache.addUser(new UserDto("adam", "Adam", "Kowalewski", generateGuid(), "adam@localhost", userList, userList));
+    userCache.addUser(new UserDto("tom", "Tom", "Kowalewski", generateGuid(), "tom@localhost", userList, userList));
+    userCache.addUser(new UserDto("max", "Max", "Kowalewski", generateGuid(), "max@localhost", userList, userList));
+
+    List<String> adminList = new ArrayList<>();
+    adminList.add("admin");
+    userCache.addUser(new UserDto("admin", "admin", "", generateGuid(), "admin@localhost", adminList, adminList));
+    userCache.addUser(new UserDto("administrator", "Administrator", "", generateGuid(), "administrator@localhost", adminList, adminList));
+
+  }
+  
+  public void clear(){
+    userCache.getUserMap().clear();
+  }
+
   public List<UserDto> getUserList() {
     List<UserDto> userList = new ArrayList<>();
 
@@ -59,6 +86,10 @@ public class MockBean implements Serializable {
 
   public String getVersion() {
     return new Version().getVersionFull();
+  }
+
+  String generateGuid() {
+    return "11112222333344445555666677778888";
   }
 
 }
