@@ -1,6 +1,8 @@
-# LDAP Authentication
-REST service for authentication against LDAP / ADS
+# LDAP Auth 
+REST service which provide authentication against LDAP / ADS. 
 
+# LDAP Auth-mock
+REST service which provide authentication against mocked LDAP / ADS. 
 
 # Links
 | Stage | Module  | Link  |
