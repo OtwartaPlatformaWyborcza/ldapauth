@@ -30,8 +30,10 @@ Application is configured via JNDI.
 
 ## Version 0.2.0
 Service implementation.
-* [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) Service implementation
+* [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
 * [LDAPAUTH-7]((https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
+* [LDAPAUTH-8]((https://otwartapw.atlassian.net/browse/LDAPAUTH-8) Authentication
+
 
 ## Version 0.3.0
 Beta release.
@@ -55,4 +57,3 @@ Service definition and MOCK implementation.
 * [x] [LDAPAUTH-3]((https://otwartapw.atlassian.net/browse/LDAPAUTH-3) POM cleanup
 * [x] [LDAPAUTH-5]((https://otwartapw.atlassian.net/browse/LDAPAUTH-5) Userfriendly populate and clear logic for mock.
 * [x] [LDAPAUTH-4]((https://otwartapw.atlassian.net/browse/LDAPAUTH-4) API definition.
-
