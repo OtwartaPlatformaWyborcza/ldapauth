@@ -17,20 +17,20 @@
     <dependencies>
         <dependency>
             <groupId>pl.otwartapw.ldapauth</groupId>
-            <artifactId>ldapauth-api</artifactId>            
+            <artifactId>ldapauth-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>            
-        </dependency>        
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
         <dependency>
             <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>            
+            <artifactId>javaee-web-api</artifactId>
         </dependency>
     </dependencies>
 
     <build>
-        <plugins>            
+        <plugins>
             <plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
