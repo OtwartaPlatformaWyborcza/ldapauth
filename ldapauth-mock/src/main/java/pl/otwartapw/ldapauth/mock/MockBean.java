@@ -70,8 +70,8 @@ public class MockBean implements Serializable {
     userCache.addUser(new UserDto("administrator", "Administrator", "", generateGuid(), "administrator@localhost", adminList, adminList));
 
   }
-  
-  public void clear(){
+
+  public void clear() {
     userCache.getUserMap().clear();
   }
 
@@ -85,7 +85,7 @@ public class MockBean implements Serializable {
   }
 
   public String getVersion() {
-    return new Version().getVersionFull();
+    return VersionBuilder.build().toString();
   }
 
   String generateGuid() {

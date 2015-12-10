@@ -41,6 +41,7 @@ import pl.otwartapw.ldapauth.api.LdapConfigDto;
 import pl.otwartapw.ldapauth.api.LoginDto;
 import pl.otwartapw.ldapauth.api.LoginLdapDto;
 import pl.otwartapw.ldapauth.api.UserDto;
+import pl.otwartapw.ldapauth.api.VersionDto;
 
 /**
  * REST resource.
@@ -96,9 +97,8 @@ public class MockResource implements LdapAuthApi {
   }
 
   @Override
-  public Response getVersion() {
-    Version version = new Version();
-    return Response.ok().entity(version.getVersionFull()).build();
+  public VersionDto getVersion() {
+    return VersionBuilder.build();
   }
 
 }
