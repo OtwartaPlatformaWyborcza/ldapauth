@@ -75,7 +75,7 @@ public interface LdapAuthApi {
    */
   @GET
   @Path("/version")
-  @Produces({TEXT_PLAIN})
+  @Produces({APPLICATION_JSON, APPLICATION_XML, TEXT_PLAIN})
   VersionDto getVersion();
 
 }
