@@ -5,7 +5,7 @@ REST service for authentication against LDAP / ADS
 # Links
 | Stage | Module  | Link  |
 | -------------| ------------- | ------------- |
-| - | JIRA | https://otwartapw.atlassian.net/  |
+| - | JIRA | [https://otwartapw.atlassian.net/](https://otwartapw.atlassian.net/secure/RapidBoard.jspa?rapidView=6&projectKey=LDAPAUTH)  |
 | DEV | LDAPAuth | http://dev.otwartapw.pl/ldapauth/  |
 | DEV | LDAPAuth-Mock | http://dev.otwartapw.pl/ldapauth-mock/  |
 | TEST | LDAPAuth | http://test.otwartapw.pl/ldapauth/  |
