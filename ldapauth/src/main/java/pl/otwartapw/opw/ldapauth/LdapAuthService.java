@@ -41,24 +41,25 @@ import pl.otwartapw.ldapauth.api.UserDto;
  */
 @Stateless
 public class LdapAuthService implements Serializable {
-
+  
   private static final long serialVersionUID = 1L;
   private static final Logger logger = LoggerFactory.getLogger(LdapAuthService.class);
-
+  
   private LdapContext ldapCtx;
   private String ldapUrl;
   private String ldapAuthentication;
-
+  
   public LdapAuthService() {
   }
-
+  
   public UserDto login(LoginDto login) {
+    logger.trace("login {}", login);
     return null;
   }
-
+  
   LdapContext bindLdap(String url, String authentication, String login, String password)
           throws NamingException {
-
+    
     Hashtable<String, String> cfg = new Hashtable<>();
     cfg.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
     cfg.put(Context.PROVIDER_URL, url);
@@ -66,12 +67,12 @@ public class LdapAuthService implements Serializable {
     cfg.put(Context.SECURITY_PRINCIPAL, login);
     cfg.put(Context.SECURITY_CREDENTIALS, password);
     cfg.put("java.naming.ldap.attributes.binary", "objectGUID");
-
+    
     try {
       return new InitialLdapContext(cfg, null);
     } catch (NamingException ne) {
       throw new NamingException("LDAP bind failed" + ne.getExplanation());
     }
   }
-
+  
 }
