@@ -85,7 +85,8 @@ public class MockBean implements Serializable {
   }
 
   public String getVersion() {
-    return VersionBuilder.build().toString();
+    String uri = "/META-INF/maven/pl.otwartapw.ldapauth/ldapauth-mock/pom.properties";    
+    return VersionBuilder.build(uri).toString();
   }
 
   String generateGuid() {

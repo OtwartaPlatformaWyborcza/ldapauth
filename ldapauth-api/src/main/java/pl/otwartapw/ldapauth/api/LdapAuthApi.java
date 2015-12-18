@@ -33,7 +33,6 @@ import javax.ws.rs.Produces;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static javax.ws.rs.core.MediaType.APPLICATION_XML;
 import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
-import javax.ws.rs.core.Response;
 
 /**
  * REST service definition for authentication against LDAP.
@@ -53,7 +52,7 @@ public interface LdapAuthApi {
   @Path("/login")
   @Consumes({APPLICATION_JSON, APPLICATION_XML})
   @Produces({APPLICATION_JSON, APPLICATION_XML})
-  Response login(@NotNull @Valid LoginDto dto);
+  UserDto login(@NotNull @Valid LoginDto dto);
 
   /**
    * Perform LDAP login with custom LDAP context.
@@ -66,7 +65,7 @@ public interface LdapAuthApi {
   @Path("/loginldap")
   @Consumes({APPLICATION_JSON, APPLICATION_XML})
   @Produces({APPLICATION_JSON, APPLICATION_XML})
-  Response loginLdap(@NotNull @Valid LoginLdapDto dto);
+  UserDto loginLdap(@NotNull @Valid LoginLdapDto dto);
 
   /**
    * Returns artifact version.

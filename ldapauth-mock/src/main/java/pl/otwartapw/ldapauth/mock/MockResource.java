@@ -27,6 +27,7 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.ForbiddenException;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -58,7 +59,7 @@ public class MockResource implements LdapAuthApi {
   UserCache userCache;
 
   @Override
-  public Response login(LoginDto dto) {
+  public UserDto login(LoginDto dto) {
     logger.info("login");
     logger.trace("login {}", dto.toString());
 
@@ -66,14 +67,14 @@ public class MockResource implements LdapAuthApi {
 
     if (user == null) {
       logger.info("Login failed {}", dto.getLogin());
-      return Response.status(Response.Status.FORBIDDEN).build();
+      throw new ForbiddenException();
     }
     logger.info("Login {}", dto.getLogin());
-    return Response.ok().entity(user).build();
+    return user;
   }
 
   @Override
-  public Response loginLdap(LoginLdapDto dto) {
+  public UserDto loginLdap(LoginLdapDto dto) {
     logger.info("loginLdap");
     logger.trace("loginLdap {}", dto.toString());
 
@@ -98,7 +99,9 @@ public class MockResource implements LdapAuthApi {
 
   @Override
   public VersionDto getVersion() {
-    return VersionBuilder.build();
+    logger.info("getVersion()");
+    String uri = "/META-INF/maven/pl.otwartapw.ldapauth/ldapauth-mock/pom.properties";
+    return VersionBuilder.build(uri);
   }
 
 }

@@ -34,21 +34,22 @@ import pl.otwartapw.ldapauth.api.VersionDto;
  * Provides access to version information.
  *
  * @author Adam Kowalewski
+ * @version 2015.12.18
  */
 public class VersionBuilder {
 
   private static final Logger logger = LoggerFactory.getLogger(VersionBuilder.class);
 
-  private static final String URI = "/META-INF/maven/pl.otwartapw.ldapauth/ldapauth-mock/pom.properties";
   private static final String VERSION = "version";
   private static final String ID = "artifactId";
 
-  public static VersionDto build() {
+  public static VersionDto build(String uri) {
+    logger.trace("build {}", uri);
     VersionDto result = new VersionDto();
 
     Properties properties = new Properties();
     try {
-      InputStream resourceAsStream = VersionBuilder.class.getResourceAsStream(URI);
+      InputStream resourceAsStream = VersionBuilder.class.getResourceAsStream(uri);
       properties.load(resourceAsStream);
       result.setArtifactId(properties.getProperty(ID));
       result.setVersion(properties.getProperty(VERSION));
