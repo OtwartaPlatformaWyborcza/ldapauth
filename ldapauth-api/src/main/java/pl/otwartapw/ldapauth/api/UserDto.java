@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
+ * DTO represents an authenticated user.
  *
  * @author Adam Kowalewski
  */
