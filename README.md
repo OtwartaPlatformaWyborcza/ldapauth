@@ -19,6 +19,11 @@ REST service which provide authentication against mocked LDAP / ADS.
 # Configuration
 
 ## LDAP Auth
+Application is configured via JNDI.
+
+| JNDI | Default  | Description  |
+| -------------| ------------- | ------------- |
+| java:global/ldapauth-mock/cachesize | 5 | Cache size |
 
 ## LDAP Auth Mock
 Application is configured via JNDI.
