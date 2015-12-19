@@ -23,7 +23,7 @@ Application is configured via JNDI.
 
 | JNDI | Default  | Description  |
 | -------------| ------------- | ------------- |
-| java:global/ldapauth-mock/cachesize | 5 | Cache size |
+| java:global/ldapauth/ABC | - |  |
 
 ## LDAP Auth Mock
 Application is configured via JNDI.
