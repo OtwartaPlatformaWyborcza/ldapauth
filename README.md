@@ -60,7 +60,7 @@ First release
 
 ## Version 0.1.0 [released 2015.12.03]
 Service definition and MOCK implementation.
-* [x] [LDAPAUTH-2]((https://otwartapw.atlassian.net/browse/LDAPAUTH-2) Mock implementation
-* [x] [LDAPAUTH-3]((https://otwartapw.atlassian.net/browse/LDAPAUTH-3) POM cleanup
-* [x] [LDAPAUTH-5]((https://otwartapw.atlassian.net/browse/LDAPAUTH-5) Userfriendly populate and clear logic for mock.
-* [x] [LDAPAUTH-4]((https://otwartapw.atlassian.net/browse/LDAPAUTH-4) API definition.
+* [x] [LDAPAUTH-2](https://otwartapw.atlassian.net/browse/LDAPAUTH-2) Mock implementation
+* [x] [LDAPAUTH-3](https://otwartapw.atlassian.net/browse/LDAPAUTH-3) POM cleanup
+* [x] [LDAPAUTH-5](https://otwartapw.atlassian.net/browse/LDAPAUTH-5) Userfriendly populate and clear logic for mock.
+* [x] [LDAPAUTH-4](https://otwartapw.atlassian.net/browse/LDAPAUTH-4) API definition.
