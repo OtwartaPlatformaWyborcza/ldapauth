@@ -37,9 +37,9 @@ Application is configured via JNDI.
 
 ## Version 0.2.0
 Service implementation.
-* [LDAPAUTH-1]((https://otwartapw.atlassian.net/browse/LDAPAUTH-1) Authentication
-* [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
-* [LDAPAUTH-7]((https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
+* [LDAPAUTH-1](https://otwartapw.atlassian.net/browse/LDAPAUTH-1) Authentication
+* [LDAPAUTH-6](https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
+* [LDAPAUTH-7](https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
 
 
 ## Version 0.3.0
