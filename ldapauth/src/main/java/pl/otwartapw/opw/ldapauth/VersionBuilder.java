@@ -53,13 +53,11 @@ public class VersionBuilder {
       properties.load(resourceAsStream);
       result.setArtifactId(properties.getProperty(ID));
       result.setVersion(properties.getProperty(VERSION));
-
     } catch (IOException e) {
       logger.error("Properties could not be read.", e);
     } catch (NullPointerException e) {
       logger.error("Resource could not be read. ", e);
     }
-
     return result;
   }
 
