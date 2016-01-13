@@ -17,21 +17,35 @@ REST service which provide authentication against mocked LDAP / ADS.
 
 
 # Configuration
+All configuration parameters are defined as JNDI context.  
 
 ## LDAP Auth
-Application is configured via JNDI.
+Overview of JNDI configuration parameters
 
 | JNDI | Default  | Description  |
 | -------------| ------------- | ------------- |
 | java:global/ldapauth/ABC | - |  |
 
 ## LDAP Auth Mock
-Application is configured via JNDI.
+Overview of JNDI configuration parameters
 
 | JNDI | Default  | Description  |
 | -------------| ------------- | ------------- |
 | java:global/ldapauth-mock/cachesize | 5 | Cache size |
 | java:global/ldapauth-mock/secretkey | secret | optional |
+
+Example `standalone.xml` for WildFly 9.0.2.Final
+```xml
+...
+<subsystem xmlns="urn:jboss:domain:naming:2.0">
+   <bindings>
+      <simple name="java:global/ldapauth-mock/secretkey" value="TopSecret.!" type="java.lang.String"/>
+      <simple name="java:global/ldapauth-mock/usercache" value="15" type="int"/>
+   </bindings>
+   <remote-naming/>
+</subsystem>
+...
+```
 
 # Roadmap
 
