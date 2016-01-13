@@ -54,7 +54,7 @@ Service implementation.
 * [LDAPAUTH-1]((https://otwartapw.atlassian.net/browse/LDAPAUTH-1) Authentication
 * [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
 * [LDAPAUTH-7]((https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
-* [LDAPAUTH-8]((https://otwartapw.atlassian.net/browse/LDAPAUTH-8) Reusable version output
+* [x] [LDAPAUTH-8]((https://otwartapw.atlassian.net/browse/LDAPAUTH-8) Reusable version output
 
 ## Version 0.3.0
 Beta release.
