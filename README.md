@@ -1,8 +1,8 @@
-# LDAP Auth 
-REST service which provide authentication against LDAP / ADS. 
+# LDAP Auth
+REST service which provide authentication against LDAP / ADS.
 
 # LDAP Auth-mock
-REST service which provide authentication against mocked LDAP / ADS. 
+REST service which provide authentication against mocked LDAP / ADS.
 
 # Links
 | Stage | Module  | Link  |
@@ -19,6 +19,11 @@ REST service which provide authentication against mocked LDAP / ADS.
 # Configuration
 
 ## LDAP Auth
+Application is configured via JNDI.
+
+| JNDI | Default  | Description  |
+| -------------| ------------- | ------------- |
+| java:global/ldapauth/ABC | - |  |
 
 ## LDAP Auth Mock
 Application is configured via JNDI.
@@ -36,7 +41,6 @@ Service implementation.
 * [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
 * [LDAPAUTH-7]((https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
 * [LDAPAUTH-8]((https://otwartapw.atlassian.net/browse/LDAPAUTH-8) Reusable version output
-
 
 ## Version 0.3.0
 Beta release.
@@ -56,7 +60,7 @@ First release
 
 ## Version 0.1.0 [released 2015.12.03]
 Service definition and MOCK implementation.
-* [x] [LDAPAUTH-2]((https://otwartapw.atlassian.net/browse/LDAPAUTH-2) Mock implementation
-* [x] [LDAPAUTH-3]((https://otwartapw.atlassian.net/browse/LDAPAUTH-3) POM cleanup
-* [x] [LDAPAUTH-5]((https://otwartapw.atlassian.net/browse/LDAPAUTH-5) Userfriendly populate and clear logic for mock.
-* [x] [LDAPAUTH-4]((https://otwartapw.atlassian.net/browse/LDAPAUTH-4) API definition.
+* [x] [LDAPAUTH-2](https://otwartapw.atlassian.net/browse/LDAPAUTH-2) Mock implementation
+* [x] [LDAPAUTH-3](https://otwartapw.atlassian.net/browse/LDAPAUTH-3) POM cleanup
+* [x] [LDAPAUTH-5](https://otwartapw.atlassian.net/browse/LDAPAUTH-5) Userfriendly populate and clear logic for mock.
+* [x] [LDAPAUTH-4](https://otwartapw.atlassian.net/browse/LDAPAUTH-4) API definition.
