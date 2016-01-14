@@ -17,7 +17,7 @@ REST service which provide authentication against mocked LDAP / ADS.
 
 
 # Configuration
-All configuration parameters are defined as JNDI context.  
+All configuration parameters are defined within JNDI context.  
 
 ## LDAP Auth
 Overview of JNDI configuration parameters
