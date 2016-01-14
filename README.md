@@ -52,7 +52,7 @@ Example `standalone.xml` for WildFly 9.0.2.Final
 ## Version 0.2.0
 Service implementation.
 * [LDAPAUTH-1]((https://otwartapw.atlassian.net/browse/LDAPAUTH-1) Authentication
-* [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
+* [x] [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
 * [LDAPAUTH-7]((https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
 * [x] [LDAPAUTH-8]((https://otwartapw.atlassian.net/browse/LDAPAUTH-8) Reusable version output
 
