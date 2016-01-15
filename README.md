@@ -55,14 +55,19 @@ Service implementation.
 * [x] [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
 * [LDAPAUTH-7]((https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
 * [x] [LDAPAUTH-8]((https://otwartapw.atlassian.net/browse/LDAPAUTH-8) Reusable version output
+* [LDAPAUTH-9]((https://otwartapw.atlassian.net/browse/LDAPAUTH-9) Unit Tests (JUnit & Mockito)
 
 ## Version 0.3.0
-Beta release.
+Quality assurance 
+* [LDAPAUTH-10]((https://otwartapw.atlassian.net/browse/LDAPAUTH-10) Integration Tests (Arquillian & RESTEasy client)
 
 ## Version 0.4.0
-RC1  
+Beta release.
 
 ## Version 0.5.0
+RC1  
+
+## Version 0.6.0
 RC2  
 
 
