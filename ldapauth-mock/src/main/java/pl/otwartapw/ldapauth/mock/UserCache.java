@@ -39,20 +39,20 @@ import pl.otwartapw.ldapauth.api.UserDto;
  */
 @ApplicationScoped
 public class UserCache implements Serializable {
-  
+
   private static final long serialVersionUID = 1L;
-  
+
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
-  
+
   @Resource(lookup = "java:global/ldapauth-mock/usercache")
   private int cacheSize;
-  
+
   private HashMap<String, UserDto> userMap;
-  
+
   public UserCache() {
     userMap = new HashMap<>();
   }
-  
+
   public UserCache(HashMap<String, UserDto> userMap, int cacheSize) {
     this.userMap = userMap;
     this.cacheSize = cacheSize;
@@ -75,13 +75,13 @@ public class UserCache implements Serializable {
     userMap.put(user.getsAMAccountName(), user);
     logger.trace("Cache status {}/{}", userMap.size(), cacheSize);
   }
-  
+
   public HashMap<String, UserDto> getUserMap() {
     return userMap;
   }
-  
+
   public void setUserMap(HashMap<String, UserDto> userList) {
     this.userMap = userList;
   }
-  
+
 }
