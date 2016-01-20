@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import pl.otwartapw.ldapauth.api.UserDto;
 
 /**
- * Provider for test person instances. 
+ * Provider for test person instances to be used in various tests. 
  *
  * @author Adam Kowalewski
  */
