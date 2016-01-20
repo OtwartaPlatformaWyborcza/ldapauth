@@ -39,43 +39,49 @@ import pl.otwartapw.ldapauth.api.UserDto;
  */
 @ApplicationScoped
 public class UserCache implements Serializable {
-
+  
   private static final long serialVersionUID = 1L;
-
+  
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
+  
   @Resource(lookup = "java:global/ldapauth-mock/usercache")
   private int cacheSize;
-
+  
   private HashMap<String, UserDto> userMap;
-
+  
   public UserCache() {
     userMap = new HashMap<>();
+  }
+  
+  public UserCache(HashMap<String, UserDto> userMap, int cacheSize) {
+    this.userMap = userMap;
+    this.cacheSize = cacheSize;
   }
 
   /**
    * Adds given dataset to cache. Cache size check is implemented and will if required clear all
    * previous entries from cache.
    *
-   * @param dto complete dataset for user.
+   * @param user complete dataset for user.
    * @author Adam Kowalewski
-   * @version 2015.10.03
+   * @version 2016.01.20
    */
-  public void addUser(UserDto dto) {
+  public void addUser(UserDto user) {
+    logger.trace("addUser {}", user);
     if (userMap.size() >= cacheSize) {
       logger.info("Cache cleanup");
       userMap.clear();
     }
-    userMap.put(dto.getsAMAccountName(), dto);
-    logger.info("Cache status {}/{}", userMap.size(), cacheSize);
+    userMap.put(user.getsAMAccountName(), user);
+    logger.trace("Cache status {}/{}", userMap.size(), cacheSize);
   }
-
+  
   public HashMap<String, UserDto> getUserMap() {
     return userMap;
   }
-
+  
   public void setUserMap(HashMap<String, UserDto> userList) {
     this.userMap = userList;
   }
-
+  
 }
