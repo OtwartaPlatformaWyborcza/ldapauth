@@ -24,11 +24,18 @@
 package pl.otwartapw.ldapauth.api;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
+ * DTO represents LDAP configuration. 
  *
  * @author Adam Kowalewski <adamkowalewski.com>
+ * @version 2016.01.14
  */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class LdapConfigDto implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -46,6 +53,43 @@ public class LdapConfigDto implements Serializable {
     this.securityAuthentication = securityAuthentication;
     this.searchRoot = searchRoot;
     this.searchFilter = searchFilter;
+  }
+
+  public String getProviderUrl() {
+    return providerUrl;
+  }
+
+  public void setProviderUrl(String providerUrl) {
+    this.providerUrl = providerUrl;
+  }
+
+  public String getSecurityAuthentication() {
+    return securityAuthentication;
+  }
+
+  public void setSecurityAuthentication(String securityAuthentication) {
+    this.securityAuthentication = securityAuthentication;
+  }
+
+  public String getSearchRoot() {
+    return searchRoot;
+  }
+
+  public void setSearchRoot(String searchRoot) {
+    this.searchRoot = searchRoot;
+  }
+
+  public String getSearchFilter() {
+    return searchFilter;
+  }
+
+  public void setSearchFilter(String searchFilter) {
+    this.searchFilter = searchFilter;
+  }
+
+  @Override
+  public String toString() {
+    return "LdapConfigDto{" + "providerUrl=" + providerUrl + ", securityAuthentication=" + securityAuthentication + ", searchRoot=" + searchRoot + ", searchFilter=" + searchFilter + '}';
   }
 
 }
