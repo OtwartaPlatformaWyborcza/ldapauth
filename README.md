@@ -51,12 +51,12 @@ Example `standalone.xml` for WildFly 9.0.2.Final
 
 ## Version 0.2.0
 Service implementation.
-* [LDAPAUTH-1]((https://otwartapw.atlassian.net/browse/LDAPAUTH-1) Authentication
-* [x] [LDAPAUTH-6]((https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
-* [LDAPAUTH-7]((https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
-* [x] [LDAPAUTH-8]((https://otwartapw.atlassian.net/browse/LDAPAUTH-8) Reusable version output
-* [LDAPAUTH-9]((https://otwartapw.atlassian.net/browse/LDAPAUTH-9) Unit Tests (JUnit & Mockito)
-* [LDAPAUTH-10]((https://otwartapw.atlassian.net/browse/LDAPAUTH-10) Default template for mock dashboard
+* [LDAPAUTH-1](https://otwartapw.atlassian.net/browse/LDAPAUTH-1) Authentication
+* [x] [LDAPAUTH-6](https://otwartapw.atlassian.net/browse/LDAPAUTH-6) API implementation
+* [LDAPAUTH-7](https://otwartapw.atlassian.net/browse/LDAPAUTH-7) Service configuration with JNDI
+* [x] [LDAPAUTH-8](https://otwartapw.atlassian.net/browse/LDAPAUTH-8) Reusable version output
+* [LDAPAUTH-9](https://otwartapw.atlassian.net/browse/LDAPAUTH-9) Unit Tests (JUnit & Mockito)
+* [LDAPAUTH-10](https://otwartapw.atlassian.net/browse/LDAPAUTH-10) Default template for mock dashboard
 
 
 ## Version 0.3.0
