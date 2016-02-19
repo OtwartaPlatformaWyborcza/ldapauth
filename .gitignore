@@ -23,8 +23,8 @@ hs_err_pid*
 *.iml
 nb-configuration.xml
 nbactions.xml
+nbproject/
 
 # target dir # 
 target/
-
 
