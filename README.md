@@ -1,3 +1,5 @@
+http://91.250.114.134/ci-jenkins/buildStatus/icon?job=LDAPAuth
+
 # LDAP Auth
 REST service which provide authentication against LDAP / ADS.
 
